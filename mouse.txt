@@ -48,3 +48,20 @@ public class Rect extends JPanel{
 			g.drawRect(r.x, r.y, r.w, r.h);
 	}
 }
+public class Main extends JFrame{
+	
+	public Main() {
+		this.setSize(400,400);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setTitle("Rect");
+		this.setLocationRelativeTo(null);
+		
+		this.add(new Rect());
+		this.setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		new Main();
+	}
+
+} // End
