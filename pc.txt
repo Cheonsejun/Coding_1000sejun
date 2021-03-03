@@ -1,0 +1,67 @@
+class Rectangle{
+	int x, y, w, h;
+}
+
+public class Rect extends JPanel{
+	BufferedImage img = null;
+	int imgX = 0; int imgY = 0;
+	Rectangle[] arr = new Rectangle[100];
+	int index = 0;
+	
+	public Rect() {
+		
+		this.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {}
+
+			@Override
+			public void mouseExited(MouseEvent e) {}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(index > 100)
+					return;
+				arr[index] = new Rectangle();
+				arr[index].x = e.getX();
+				arr[index].y = e.getY();
+				arr[index].w = 50;
+				arr[index].h = 50;
+				index++;
+				
+				repaint();
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {}
+			
+		});
+	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		for(Rectangle r : arr) 
+			if(r != null)
+			g.drawRect(r.x, r.y, r.w, r.h);
+	}
+}
+public class Main extends JFrame{
+	
+	public Main() {
+		this.setSize(400,400);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setTitle("Rect");
+		this.setLocationRelativeTo(null);
+		
+		this.add(new Rect());
+		this.setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		new Main();
+	}
+
+} // End
