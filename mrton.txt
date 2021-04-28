@@ -1,0 +1,14 @@
+# 완주하지 못한 선수
+def solution(particpant, completion):
+    p = sorted(particpant)  # 참가자 선수 명단
+    c = sorted(completion)  # 완주한 선수 명단
+    for pp, cc in zip(p, c):
+        if pp != cc:
+            return pp
+
+    return p[-1]  # 다 같으면 맨 마지막에 정렬된 값이 나온다.
+
+
+particpant = ["c", "a", "b", "d", ]
+completion = ["a", "b", "c"]
+print(solution(particpant, completion))
