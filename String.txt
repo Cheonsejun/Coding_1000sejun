@@ -1,0 +1,17 @@
+// 프로그래머스 Level1 문자열 내 마음대로 정렬하기
+
+function String_s(strings, n) {
+    return strings.sort( (a, b) => {
+        if(a[n] > b[n]) return 1;
+        if(a[n] < b[n]) return -1;
+        if(a[n] === b[n]) return a.localeCompare(b);
+    })
+}
+// localeCompare() 메소드를 사용하였다.
+// 양수,음수,0을 리턴하며, 각 숫자 값에 따라 비교문자의 위치를 알 수 있습니다.
+
+let strings1 = ['sun', 'bed', 'car'];
+console.log(String_s(strings1, 1));
+
+let strings2 = ["abce", "abcd", "cdx"];
+console.log(String_s(strings2, 2));
