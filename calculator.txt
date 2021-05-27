@@ -1,0 +1,20 @@
+// 모던자바스크립트 계산기만들기
+function Calculator() {
+            this.read = function () {
+                this.a1 = +prompt('첫번째 숫자입력', 0);
+                this.a2 = +prompt('두번째 숫자입력', 0);
+            }
+
+            this.sum = function () {
+                return this.a1 + this.a2;
+            }
+
+            this.mul = function () {
+                return this.a1 * this.a2;
+            }
+        }
+        let calculator = new Calculator();
+        calculator.read();
+        alert('Sum = ' + calculator.sum());
+        alert('Mul = ' + calculator.mul());
+    </script>
