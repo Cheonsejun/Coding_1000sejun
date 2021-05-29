@@ -1,0 +1,14 @@
+<script>
+        function Accumulator(n) {
+            this.value = n;
+
+            this.read = function () {
+                this.value += +prompt('숫자를 입력하시오', 0);
+            };
+        }
+
+        let acc = new Accumulator(100);
+        acc.read();
+
+        alert(acc.value);
+    </script>
